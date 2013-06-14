@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.celpax</groupId>
 		<artifactId>highcharts-export</artifactId>
-		<version>3.0.88-SNAPSHOT</version>
+		<version>3.0.90-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>highcharts-export-web</artifactId>
