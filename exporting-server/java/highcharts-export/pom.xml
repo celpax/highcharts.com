@@ -57,4 +57,9 @@
 		</dependency>
 		
 	</dependencies>
+	<scm>
+		<url>https://github.com/celpax/highcharts.com/</url>
+		<connection>scm:git:ssh://git@github.com/celpax/highcharts.com.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/celpax/highcharts.com.git</developerConnection>
+	</scm>
 </project>
