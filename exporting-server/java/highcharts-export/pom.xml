@@ -18,6 +18,11 @@
 		<module>highcharts-export-convert</module>
 		<module>highcharts-export-web</module>
 	</modules>
+	<scm>
+		<url>https://github.com/celpax/highcharts.com/</url>
+		<connection>scm:git:ssh://git@github.com/celpax/highcharts.com.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/celpax/highcharts.com.git</developerConnection>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -55,11 +60,17 @@
 			<artifactId>cglib</artifactId>
 			<version>${gclibVersion}</version>
 		</dependency>
-		
+
 	</dependencies>
-	<scm>
-		<url>https://github.com/celpax/highcharts.com/</url>
-		<connection>scm:git:ssh://git@github.com/celpax/highcharts.com.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/celpax/highcharts.com.git</developerConnection>
-	</scm>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
