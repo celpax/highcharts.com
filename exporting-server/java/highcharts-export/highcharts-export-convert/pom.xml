@@ -38,40 +38,4 @@
 			<version>1.7</version>
 		</dependency>
 	</dependencies>
-	<build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>init-bootstrap-submodule</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>git</executable>
-                            <!-- on root of the github repo -->
-                            <workingDirectory>../../submodules/highcharts</workingDirectory>
-                            <commandlineArgs>submodule init</commandlineArgs>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>get-bootstrap-distrib</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>git</executable>
-                            <!-- on root of the github repo -->
-                            <workingDirectory>../../submodules/highcharts</workingDirectory>
-                            <commandlineArgs>submodule update</commandlineArgs>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

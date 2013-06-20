@@ -65,12 +65,70 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>${mavenReleasePluginVersion}</version>
+				<version>2.1</version>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<commitByProject>true</commitByProject>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>init-highcharts-submodule</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>git</executable>
+                            <!-- on root of the github repo -->
+                            <workingDirectory>../submodules/highcharts</workingDirectory>
+                            <commandlineArgs>submodule init</commandlineArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>get-highcharts-distrib</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>git</executable>
+                            <!-- on root of the github repo -->
+                            <workingDirectory>../submodules/highcharts</workingDirectory>
+                            <commandlineArgs>submodule update</commandlineArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>checkout-master-branch</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>git</executable>
+                            <!-- on root of the github repo -->
+                            <workingDirectory>../submodules/highcharts</workingDirectory>
+                            <commandlineArgs>checkout master</commandlineArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>pull-master-branch</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>git</executable>
+                            <!-- on root of the github repo -->
+                            <workingDirectory>../submodules/highcharts</workingDirectory>
+                            <commandlineArgs>pull</commandlineArgs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 </project>
