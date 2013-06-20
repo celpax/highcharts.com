@@ -65,7 +65,7 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.1</version>
+				<version>${mavenReleasePluginVersion}</version>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<commitByProject>true</commitByProject>
