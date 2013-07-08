@@ -157,7 +157,7 @@
 
 			/* for pdf we need a bit more paperspace in some cases for example (w:600,h:400), I don't know why.*/
 			if (outputExtension === 'pdf') {
-				page.paperSize = { width: clipwidth, height: clipheight + 2};
+				page.paperSize = { format: 'A4', orientation: 'landscape', border: '1cm' };
 			}
 		};
 
