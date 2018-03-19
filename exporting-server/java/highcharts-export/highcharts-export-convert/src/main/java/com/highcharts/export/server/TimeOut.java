@@ -1,8 +1,8 @@
 package com.highcharts.export.server;
 
-import java.util.TimerTask;
-
 import org.apache.log4j.Logger;
+
+import java.util.TimerTask;
 
 
 public class TimeOut extends TimerTask {
@@ -14,7 +14,7 @@ public class TimeOut extends TimerTask {
     }
 
     @Override
-    public void run(){
+    public void run() {
         logger.debug("Timed out while downloading.");
         server.setState(ServerState.TIMEDOUT);
     }
